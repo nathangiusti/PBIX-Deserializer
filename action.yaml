@@ -1,0 +1,27 @@
+name: 'PBIX Deserializer'
+description: 'Deserializes PBIX Files into json files for easier version control'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v11.9
+    - name: Power BI VC Utils
+      uses: nathangiusti/Power-BI-VC-Utils@v2.2
+      with:
+        files: ${{ steps.changed-files.outputs.all_modified_files }}
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Reformatted files for VC
