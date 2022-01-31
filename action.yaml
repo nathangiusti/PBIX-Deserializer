@@ -17,9 +17,11 @@ runs:
         fetch-depth: 0
     - name: Get changed files
       id: changed-files
-      uses: tj-actions/changed-files@v11.9
+      uses: tj-actions/changed-files@v12
+      with:
+        separator: ","
     - name: Power BI VC Utils
-      uses: nathangiusti/Power-BI-VC-Utils@v2.2
+      uses: nathangiusti/Power-BI-VC-Utils@v2.3
       with:
         files: ${{ steps.changed-files.outputs.all_modified_files }}
     - uses: stefanzweifel/git-auto-commit-action@v4
