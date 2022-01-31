@@ -20,3 +20,8 @@ jobs:
         - name: PBIX Deserializer
           uses: nathangiusti/PBIX-Deserializer@v1.1
 ~~~~
+
+If you require more fine tuning than this action allows, the heart of the PBIX Deserializer action is located here:
+https://github.com/nathangiusti/Power-BI-VC-Utils/
+
+You can use/modify that action to create a new action/workflow.
