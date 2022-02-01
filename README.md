@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: PBIX Deserializer
-          uses: nathangiusti/PBIX-Deserializer@v1.1
+          uses: nathangiusti/PBIX-Deserializer@v1.2
 ~~~~
 
 If you require more fine tuning than this action allows, the heart of the PBIX Deserializer action is located here:
