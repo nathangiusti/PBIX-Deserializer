@@ -12,9 +12,10 @@ runs:
       with:
         separator: ","
     - name: Power BI VC Utils
-      uses: nathangiusti/Power-BI-VC-Utils@v2.3
+      uses: nathangiusti/Power-BI-VC-Utils@v2.4
       with:
         files: ${{ steps.changed-files.outputs.all_modified_files }}
+        separator: ","
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Reformatted files for VC
